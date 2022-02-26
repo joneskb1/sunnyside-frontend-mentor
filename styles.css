@@ -1,4 +1,5 @@
-/* general */
+
+/* general  */
 * {
   box-sizing: border-box;
   font-size: 18px;
@@ -13,6 +14,10 @@ img {
 a {
   text-decoration: none;
   color: hsl(232, 10%, 55%);
+}
+
+li {
+  list-style-type: none;
 }
 
 body {
@@ -34,30 +39,33 @@ header {
 ul {
   position: absolute;
   top: 10%;
-  left: 7.5%;
+  left: 7%;
   display: flex;
   flex-direction: column;
   background: white;
   width: 85%;
   height: 65%;
-  padding-top: 1rem;
+  padding-top: 2.5rem;
   padding-left: 1.25rem;
   z-index: 1;
   border-right: 1.25rem solid white;
   border-top: 1rem solid rgba(63, 191, 255, 255);
 }
 
-ul a {
+ul li  {
   text-align: center;
   margin: 1rem;
   font-size: 1.25rem;
+} 
+
+
+.hamburger-link {
+  margin-left: auto;
 }
 
 .hamburger {
   width: 24px;
   height: 18px;
-  position: absolute;
-  left: 89%;
 }
 
 .contact-btn {
@@ -70,7 +78,7 @@ ul a {
   height: 56px;
   border-radius: 40px;
   font-family: "Fraunces", serif;
-  padding-top: 15px;
+  padding: 15px;
 }
 
 /* hero */
@@ -80,7 +88,9 @@ ul a {
   min-height: 538px;
   color: white;
   position: relative;
-  background-size: 100% 100%;
+  background-size: cover;
+  min-height: 500px;
+  height: 100vh;
 }
 
 .arrow-down {
@@ -166,16 +176,16 @@ h2 {
 .background-feature-cherry {
   background: no-repeat url("images/mobile/image-graphic-design.jpg");
   background-size: 100% 100%;
-  height: 600px;
-  width: 100%;
+  min-height: 600px;
+  max-width: 100%;
   position: relative;
 }
 
 .background-feature-orange {
   background: no-repeat url("images/mobile/image-photography.jpg");
   background-size: 100% 100%;
-  height: 600px;
-  width: 100%;
+  min-height: 600px;
+  max-width: 100%;
   position: relative;
 }
 
@@ -316,16 +326,11 @@ footer > img {
   .hero {
     background: no-repeat center url("images/desktop/image-header.jpg");
     position: relative;
-    background-size: 100% 100%;
-    min-height: 60vh;
+    background-size: cover;
   }
 
   h1 {
-    margin-top: 2rem;
-  }
-
-  .hamburger {
-    left: 90%;
+    margin: 1rem;
   }
 
   .arrow-down {
@@ -339,7 +344,9 @@ footer > img {
   align-content: center;
   width: 55%;
   height: 55%;
-  left: 34%;
+  left: 39%;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
   }
 
 
@@ -391,6 +398,12 @@ footer > img {
   }
 }
 
+@media (min-width: 590px) {
+  h1 {
+    margin-top: 4rem;
+  }
+}
+
 @media (min-width: 750px) {
   /* nav */
 
@@ -406,22 +419,32 @@ footer > img {
     align-self: center;
   }
 
+
   .hamburger {
     display: none;
   }
 
-  ul {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    background: none;
-    padding: 0;
-    margin: 0;
-    border-right: none;
-    border-top: none;
+  .hidden {
+    display: block;
   }
 
-  ul a {
+  ul {
+      position: relative;
+      top: 0;
+      left: auto;
+      display: flex;
+      flex-direction: row;
+      background: none;
+      padding: 0;
+      margin: 0;
+      border-right: none;
+      border-top: none;
+      justify-content: space-between;
+    }
+
+
+
+  ul li a {
     color: white;
   }
 
@@ -430,8 +453,12 @@ footer > img {
     color: black;
     padding: 15px 15px;
     margin: 0;
-    margin-top: 20px;
   }
+
+  .li-contact {
+    margin-right: 0;
+  }
+
 
   .contact-btn:active,
   .contact-btn:hover {
@@ -439,13 +466,11 @@ footer > img {
     color: white;
   }
 
-  /* hero */
-  .hero {
-    min-height: 800px;
-  }
+  /* hero */ 
+
 
   h1 {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 
   .arrow-down {
@@ -542,6 +567,7 @@ footer > img {
   }
 
   @media (min-width: 1050px) {
+
     .person-container img + p {
       min-width: 200px;
       min-height: 230px;
@@ -549,6 +575,7 @@ footer > img {
     }
   }
   @media (min-width: 1260px) {
+
     .person-container img + p {
       min-width: 200px;
       min-height: 170px;
