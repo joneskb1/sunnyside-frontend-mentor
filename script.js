@@ -6,9 +6,14 @@ const pinkDiv = document.querySelector(".pink");
 const pinkLink = document.querySelector(".pink-link");
 const social = document.querySelectorAll(".social-link");
 
-// toggle nav with hamburger click
+// toggle nav with hamburger click & change image
 hamburger.addEventListener("click", function () {
   nav.classList.toggle("hidden");
+  if (!nav.classList.contains("hidden")) {
+    hamburger.src = "images/icon-hamburger-active.svg";
+  } else {
+    hamburger.src = "images/icon-hamburger.svg";
+  }
 });
 
 // change color of divs on hover for learn more links
