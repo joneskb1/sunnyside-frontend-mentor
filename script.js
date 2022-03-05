@@ -65,6 +65,8 @@ function removeHighlight(e) {
 
 yellowLink.addEventListener("touchstart", addHighlight);
 yellowLink.addEventListener("touchend", removeHighlight);
+yellowLink.addEventListener("click", addHighlight);
+yellowLink.addEventListener("click", removeHighlight);
 yellowLink.addEventListener("touchmove", removeHighlight);
 yellowLink.addEventListener("touchcancel", removeHighlight);
 
@@ -83,6 +85,7 @@ social.forEach((el) => {
     const platform = e.target.src.slice(34).replace("-active.svg", "");
     e.target.src = `images/icon-${platform}.svg`;
   });
+
   el.addEventListener("touchmove", function (e) {
     const platform = e.target.src.slice(34).replace("-active.svg", "");
     e.target.src = `images/icon-${platform}.svg`;
