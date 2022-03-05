@@ -75,6 +75,4 @@ social.forEach((el) => {
   el.addEventListener("touchend", resetSrc);
   el.addEventListener("touchmove", resetSrc);
   el.addEventListener("touchcancel", resetSrc);
-  el.addEventListener("mouseover", changeSrc);
-  el.addEventListener("mouseout", resetSrc);
 });

@@ -297,7 +297,8 @@ footer > img {
   justify-content: space-around;
 }
 
-.more-info a:hover {
+.more-info a:hover,
+.more-info a:active {
   color: white;
 }
 
@@ -310,6 +311,22 @@ footer > img {
 .social {
   width: 70%;
   align-self: center;
+}
+.fb:hover,
+.fb:active {
+  content: url("images/icon-facebook-active.svg");
+}
+.insta:hover,
+.insta:active {
+  content: url("images/icon-instagram-active.svg");
+}
+.tw:hover,
+.tw:active {
+  content: url("images/icon-twitter-active.svg");
+}
+.pin:hover,
+.pin:active {
+  content: url("images/icon-pinterest-active.svg");
 }
 
 /* attribtion */
