@@ -1,4 +1,4 @@
-// fix ctn btn hover & social imgs
+// fix social imgs
 
 const hamburger = document.querySelector(".hamburger");
 const nav = document.querySelector("nav");
@@ -80,11 +80,13 @@ moreInfoLinks.forEach((el) => {
 function changeSrc(e) {
   const platform = e.target.src.slice(34).replace(".svg", "");
   e.target.src = `images/icon-${platform}-active.svg`;
+  console.log(`on ${e.target.src}`);
 }
 
 function resetSrc(e) {
   const platform = e.target.src.slice(34).replace("-active.svg", "");
   e.target.src = `images/icon-${platform}.svg`;
+  console.log(`off ${e.target.src}`);
 }
 
 social.forEach((el) => {
