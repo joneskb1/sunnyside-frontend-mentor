@@ -55,16 +55,17 @@ ul {
   background: white;
   width: 85%;
   height: 65%;
-  padding-top: 2.5rem;
   padding-left: 1.25rem;
   z-index: 1;
   border-right: 1.25rem solid white;
   border-top: 1rem solid rgba(63, 191, 255, 255);
+  justify-content: center;
+  align-content: center;
 }
 
 ul li {
   text-align: center;
-  margin: 1rem;
+  margin: 1.5rem;
   font-size: 1.25rem;
 }
 
@@ -79,6 +80,12 @@ ul li {
   border-radius: 40px;
   font-family: "Fraunces", serif;
   padding: 15px;
+}
+
+.contact-btn:hover,
+.contact-btn:active {
+  background: rgba(63, 191, 255, 255);
+  color: white;
 }
 
 /* hero */

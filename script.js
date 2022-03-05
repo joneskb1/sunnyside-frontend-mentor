@@ -70,9 +70,9 @@ function resetSrc(e) {
   e.target.src = `images/icon-${platform}.svg`;
 }
 
-social.forEach((el) => {
-  el.addEventListener("touchstart", changeSrc);
-  el.addEventListener("touchend", resetSrc);
-  el.addEventListener("touchmove", resetSrc);
-  el.addEventListener("touchcancel", resetSrc);
-});
+// social.forEach((el) => {
+//   el.addEventListener("touchstart", changeSrc);
+//   el.addEventListener("touchend", resetSrc);
+//   el.addEventListener("touchmove", resetSrc);
+//   el.addEventListener("touchcancel", resetSrc);
+// });
