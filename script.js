@@ -68,10 +68,10 @@ function removeHighlight(e) {
 }
 
 links.forEach((el) => {
-  // el.addEventListener("touchstart", addHighlight);
-  // el.addEventListener("touchend", removeHighlight);
-  // el.addEventListener("touchmove", removeHighlight);
-  // el.addEventListener("touchcancel", removeHighlight);
+  el.addEventListener("touchstart", addHighlight);
+  el.addEventListener("touchend", removeHighlight);
+  el.addEventListener("touchmove", removeHighlight);
+  el.addEventListener("touchcancel", removeHighlight);
   el.addEventListener("click", addHighlight);
   el.addEventListener("click", removeHighlight);
 });
@@ -90,23 +90,37 @@ moreInfoLinks.forEach((el) => {
   el.addEventListener("touchcancel", moreInfoLinkChange);
 });
 
+function changeSrc(e) {
+  // const platform = e.target.src.slice(34).replace(".svg", "");
+  // e.target.src = `images/icon-${platform}-active.svg`;
+}
+
 //social imgs touch events
 social.forEach((el) => {
-  el.addEventListener("touchstart", function (e) {
+  el.addEventListener("touchstart", changeSrc);
+
+  // el.addEventListener("touchend", function (e) {
+  //   const platform = e.target.src.slice(34).replace("-active.svg", "");
+  //   e.target.src = `images/icon-${platform}.svg`;
+  // });
+
+  // el.addEventListener("touchmove", function (e) {
+  //   const platform = e.target.src.slice(34).replace("-active.svg", "");
+  //   e.target.src = `images/icon-${platform}.svg`;
+  // });
+  // el.addEventListener("touchcancel", function (e) {
+  //   const platform = e.target.src.slice(34).replace("-active.svg", "");
+  //   e.target.src = `images/icon-${platform}.svg`;
+  // });
+});
+
+social.forEach((el) => {
+  el.addEventListener("click", function (e) {
     const platform = e.target.src.slice(34).replace(".svg", "");
     e.target.src = `images/icon-${platform}-active.svg`;
   });
 
-  el.addEventListener("touchend", function (e) {
-    const platform = e.target.src.slice(34).replace("-active.svg", "");
-    e.target.src = `images/icon-${platform}.svg`;
-  });
-
-  el.addEventListener("touchmove", function (e) {
-    const platform = e.target.src.slice(34).replace("-active.svg", "");
-    e.target.src = `images/icon-${platform}.svg`;
-  });
-  el.addEventListener("touchcancel", function (e) {
+  el.addEventListener("click", function (e) {
     const platform = e.target.src.slice(34).replace("-active.svg", "");
     e.target.src = `images/icon-${platform}.svg`;
   });
