@@ -17,7 +17,7 @@ hamburger.addEventListener("click", function () {
 });
 
 // change color of divs on hover for learn more links
-yellowLink.addEventListener("mouseover", () => {
+yellowLink.addEventListener("mouseover", (e) => {
   yellowDiv.style.backgroundColor = "#fad401";
 });
 
@@ -45,3 +45,31 @@ social.forEach((el) => {
     e.target.src = `images/icon-${platform}.svg`;
   });
 });
+
+// touch events
+
+function addHighlight(e) {
+  if (e.target.classList.contains("yellow-link")) {
+    yellowDiv.style.backgroundColor = "#fad401";
+  } else if (e.target.classList.contains("pink-link")) {
+    pinkDiv.style.backgroundColor = "#fe7766";
+  }
+}
+
+function removeHighlight(e) {
+  if (e.target.classList.contains("yellow-link")) {
+    yellowDiv.style.backgroundColor = "#fef2b9";
+  } else if (e.target.classList.contains("pink-link")) {
+    pinkDiv.style.backgroundColor = "#ffdbd4";
+  }
+}
+
+yellowLink.addEventListener("touchstart", addHighlight);
+yellowLink.addEventListener("touchend", removeHighlight);
+yellowLink.addEventListener("touchmove", removeHighlight);
+yellowLink.addEventListener("touchcancel", removeHighlight);
+
+pinkLink.addEventListener("touchstart", addHighlight);
+pinkLink.addEventListener("touchend", removeHighlight);
+pinkLink.addEventListener("touchmove", removeHighlight);
+pinkLink.addEventListener("touchcancel", removeHighlight);
