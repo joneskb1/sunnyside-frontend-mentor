@@ -1,3 +1,5 @@
+// fix ctn btn hover & social imgs
+
 const hamburger = document.querySelector(".hamburger");
 const nav = document.querySelector("nav");
 const yellowDiv = document.querySelector(".yellow");
@@ -6,6 +8,7 @@ const pinkDiv = document.querySelector(".pink");
 const pinkLink = document.querySelector(".pink-link");
 const social = document.querySelectorAll(".social-link");
 const moreInfoLinks = document.querySelectorAll(".more-info-link");
+const contactBtn = document.querySelector(".contact-btn");
 const links = [yellowLink, pinkLink];
 
 // toggle nav with hamburger click & change image
@@ -16,6 +19,12 @@ hamburger.addEventListener("click", function () {
   } else {
     hamburger.src = "images/icon-hamburger.svg";
   }
+});
+
+// contact btn touch
+contactBtn.addEventListener("touchend", function (e) {
+  e.target.style.backgroundColor = "#fbd600";
+  e.target.style.color = "#24303e";
 });
 
 // change color of divs on hover/touch for learn more links
@@ -70,9 +79,9 @@ function resetSrc(e) {
   e.target.src = `images/icon-${platform}.svg`;
 }
 
-// social.forEach((el) => {
-//   el.addEventListener("touchstart", changeSrc);
-//   el.addEventListener("touchend", resetSrc);
-//   el.addEventListener("touchmove", resetSrc);
-//   el.addEventListener("touchcancel", resetSrc);
-// });
+social.forEach((el) => {
+  el.addEventListener("touchstart", changeSrc);
+  el.addEventListener("touchend", resetSrc);
+  el.addEventListener("touchmove", resetSrc);
+  el.addEventListener("touchcancel", resetSrc);
+});
