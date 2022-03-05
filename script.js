@@ -22,15 +22,18 @@ hamburger.addEventListener("click", function () {
 });
 
 // contact btn touch
-contactBtn.addEventListener("touchstart", function (e) {
+function contactActive(e) {
   e.target.style.backgroundColor = "#3fbfff";
   e.target.style.color = "#ffffff";
-});
-
-contactBtn.addEventListener("touchend", function (e) {
+}
+function contactReg(e) {
   e.target.style.backgroundColor = "#fbd600";
   e.target.style.color = "#24303e";
-});
+}
+contactBtn.addEventListener("touchstart", contactActive);
+contactBtn.addEventListener("touchend", contactReg);
+contactBtn.addEventListener("touchmove", contactReg);
+contactBtn.addEventListener("touchcancel", contactReg);
 
 // change color of divs on hover/touch for learn more links
 function addHighlight(e) {
