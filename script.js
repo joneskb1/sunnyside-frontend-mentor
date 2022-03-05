@@ -91,6 +91,7 @@ moreInfoLinks.forEach((el) => {
 });
 
 function changeSrc(e) {
+  // console.log(e.target.src);
   // const platform = e.target.src.slice(34).replace(".svg", "");
   // e.target.src = `images/icon-${platform}-active.svg`;
 }
@@ -112,16 +113,4 @@ social.forEach((el) => {
   //   const platform = e.target.src.slice(34).replace("-active.svg", "");
   //   e.target.src = `images/icon-${platform}.svg`;
   // });
-});
-
-social.forEach((el) => {
-  el.addEventListener("click", function (e) {
-    const platform = e.target.src.slice(34).replace(".svg", "");
-    e.target.src = `images/icon-${platform}-active.svg`;
-  });
-
-  el.addEventListener("click", function (e) {
-    const platform = e.target.src.slice(34).replace("-active.svg", "");
-    e.target.src = `images/icon-${platform}.svg`;
-  });
 });
