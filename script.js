@@ -22,6 +22,11 @@ hamburger.addEventListener("click", function () {
 });
 
 // contact btn touch
+contactBtn.addEventListener("touchstart", function (e) {
+  e.target.style.backgroundColor = "#3fbfff";
+  e.target.style.color = "#ffffff";
+});
+
 contactBtn.addEventListener("touchend", function (e) {
   e.target.style.backgroundColor = "#fbd600";
   e.target.style.color = "#24303e";
