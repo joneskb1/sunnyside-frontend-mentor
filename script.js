@@ -47,7 +47,6 @@ social.forEach((el) => {
 });
 
 // touch events
-
 function addHighlight(e) {
   if (e.target.classList.contains("yellow-link")) {
     yellowDiv.style.backgroundColor = "#fad401";
@@ -73,3 +72,23 @@ pinkLink.addEventListener("touchstart", addHighlight);
 pinkLink.addEventListener("touchend", removeHighlight);
 pinkLink.addEventListener("touchmove", removeHighlight);
 pinkLink.addEventListener("touchcancel", removeHighlight);
+
+social.forEach((el) => {
+  el.addEventListener("touchstart", function (e) {
+    const platform = e.target.src.slice(34).replace(".svg", "");
+    e.target.src = `images/icon-${platform}-active.svg`;
+  });
+
+  el.addEventListener("touchend", function (e) {
+    const platform = e.target.src.slice(34).replace("-active.svg", "");
+    e.target.src = `images/icon-${platform}.svg`;
+  });
+  el.addEventListener("touchmove", function (e) {
+    const platform = e.target.src.slice(34).replace("-active.svg", "");
+    e.target.src = `images/icon-${platform}.svg`;
+  });
+  el.addEventListener("touchcancel", function (e) {
+    const platform = e.target.src.slice(34).replace("-active.svg", "");
+    e.target.src = `images/icon-${platform}.svg`;
+  });
+});
