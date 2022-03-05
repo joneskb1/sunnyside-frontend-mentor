@@ -7,6 +7,7 @@ const yellowLink = document.querySelector(".yellow-link");
 const pinkDiv = document.querySelector(".pink");
 const pinkLink = document.querySelector(".pink-link");
 const social = document.querySelectorAll(".social-link");
+const moreInfoLinks = document.querySelectorAll(".more-info-link");
 
 // toggle nav with hamburger click & change image
 hamburger.addEventListener("click", function () {
@@ -79,6 +80,19 @@ pinkLink.addEventListener("touchmove", removeHighlight);
 pinkLink.addEventListener("touchcancel", removeHighlight);
 pinkLink.addEventListener("click", addHighlight);
 pinkLink.addEventListener("click", removeHighlight);
+
+function moreInfoLinkChange(e) {
+  e.target.style.color = "#458d7e";
+}
+
+moreInfoLinks.forEach((el) => {
+  el.addEventListener("touchstart", function (e) {
+    e.target.style.color = "white";
+  });
+  el.addEventListener("touchend", moreInfoLinkChange);
+  el.addEventListener("touchmove", moreInfoLinkChange);
+  el.addEventListener("touchcancel", moreInfoLinkChange);
+});
 
 social.forEach((el) => {
   el.addEventListener("touchstart", function (e) {
