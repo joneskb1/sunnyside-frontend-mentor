@@ -1,3 +1,5 @@
+// working on touch events
+
 const hamburger = document.querySelector(".hamburger");
 const nav = document.querySelector("nav");
 const yellowDiv = document.querySelector(".yellow");
@@ -65,15 +67,18 @@ function removeHighlight(e) {
 
 yellowLink.addEventListener("touchstart", addHighlight);
 yellowLink.addEventListener("touchend", removeHighlight);
-yellowLink.addEventListener("click", addHighlight);
-yellowLink.addEventListener("click", removeHighlight);
 yellowLink.addEventListener("touchmove", removeHighlight);
 yellowLink.addEventListener("touchcancel", removeHighlight);
+
+yellowLink.addEventListener("click", addHighlight);
+yellowLink.addEventListener("click", removeHighlight);
 
 pinkLink.addEventListener("touchstart", addHighlight);
 pinkLink.addEventListener("touchend", removeHighlight);
 pinkLink.addEventListener("touchmove", removeHighlight);
 pinkLink.addEventListener("touchcancel", removeHighlight);
+pinkLink.addEventListener("click", addHighlight);
+pinkLink.addEventListener("click", removeHighlight);
 
 social.forEach((el) => {
   el.addEventListener("touchstart", function (e) {
