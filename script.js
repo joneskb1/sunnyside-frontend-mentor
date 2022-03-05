@@ -37,23 +37,6 @@ links.forEach((el) => {
   });
 });
 
-// change color of divs on hover for learn more links
-// yellowLink.addEventListener("mouseover", (e) => {
-//   yellowDiv.style.backgroundColor = "#fad401";
-// });
-
-// yellowLink.addEventListener("mouseout", () => {
-//   yellowDiv.style.backgroundColor = "#fef2b9";
-// });
-
-// pinkLink.addEventListener("mouseover", () => {
-//   pinkDiv.style.backgroundColor = "#fe7766";
-// });
-
-// pinkLink.addEventListener("mouseout", () => {
-//   pinkDiv.style.backgroundColor = "#ffdbd4";
-// });
-
 // on hover, change imgs for social logos
 social.forEach((el) => {
   el.addEventListener("mouseover", function (e) {
@@ -67,7 +50,7 @@ social.forEach((el) => {
   });
 });
 
-// touch events
+// touch events for learn more links
 function addHighlight(e) {
   if (e.target.classList.contains("yellow-link")) {
     yellowDiv.style.backgroundColor = "#fad401";
@@ -85,30 +68,15 @@ function removeHighlight(e) {
 }
 
 links.forEach((el) => {
-  el.addEventListener("touchstart", addHighlight);
-  el.addEventListener("touchend", removeHighlight);
-  el.addEventListener("touchmove", removeHighlight);
-  el.addEventListener("touchcancel", removeHighlight);
+  // el.addEventListener("touchstart", addHighlight);
+  // el.addEventListener("touchend", removeHighlight);
+  // el.addEventListener("touchmove", removeHighlight);
+  // el.addEventListener("touchcancel", removeHighlight);
   el.addEventListener("click", addHighlight);
   el.addEventListener("click", removeHighlight);
 });
 
-// yellowLink.addEventListener("touchstart", addHighlight);
-// yellowLink.addEventListener("touchend", removeHighlight);
-// yellowLink.addEventListener("touchmove", removeHighlight);
-// yellowLink.addEventListener("touchcancel", removeHighlight);
-
-// yellowLink.addEventListener("click", addHighlight);
-// yellowLink.addEventListener("click", removeHighlight);
-
-// pinkLink.addEventListener("touchstart", addHighlight);
-// pinkLink.addEventListener("touchend", removeHighlight);
-// pinkLink.addEventListener("touchmove", removeHighlight);
-// pinkLink.addEventListener("touchcancel", removeHighlight);
-// pinkLink.addEventListener("click", addHighlight);
-// pinkLink.addEventListener("click", removeHighlight);
-
-// more info links
+// more info links touch events
 function moreInfoLinkChange(e) {
   e.target.style.color = "#458d7e";
 }
@@ -122,7 +90,7 @@ moreInfoLinks.forEach((el) => {
   el.addEventListener("touchcancel", moreInfoLinkChange);
 });
 
-//social imgs
+//social imgs touch events
 social.forEach((el) => {
   el.addEventListener("touchstart", function (e) {
     const platform = e.target.src.slice(34).replace(".svg", "");
