@@ -78,15 +78,33 @@ moreInfoLinks.forEach((el) => {
 
 // on hover, change imgs for social logos
 function changeSrc(e) {
-  const platform = e.target.src.slice(34).replace(".svg", "");
-  e.target.src = `images/icon-${platform}-active.svg`;
-  console.log(`on ${e.target.src}`);
+  if (e.target.classList.contains("fb")) {
+    e.target.src = `images/icon-facebook-active.svg`;
+  } else if (e.target.classList.contains("tw")) {
+    e.target.src = `images/icon-twitter-active.svg`;
+  } else if (e.target.classList.contains("pin")) {
+    e.target.src = `images/icon-pinterest--active.svg`;
+  } else if (e.target.classList.contains("insta")) {
+    e.target.src = `images/icon-instagram-active.svg`;
+  }
+
+  // const platform = e.target.src.slice(34).replace(".svg", "");
+  // e.target.src = `images/icon-${platform}-active.svg`;
 }
 
 function resetSrc(e) {
-  const platform = e.target.src.slice(34).replace("-active.svg", "");
-  e.target.src = `images/icon-${platform}.svg`;
-  console.log(`off ${e.target.src}`);
+  if (e.target.classList.contains("fb")) {
+    e.target.src = `images/icon-facebook.svg`;
+  } else if (e.target.classList.contains("tw")) {
+    e.target.src = `images/icon-twitter.svg`;
+  } else if (e.target.classList.contains("pin")) {
+    e.target.src = `images/icon-pinterest.svg`;
+  } else if (e.target.classList.contains("insta")) {
+    e.target.src = `images/icon-instagram.svg`;
+  }
+
+  // const platform = e.target.src.slice(34).replace("-active.svg", "");
+  // e.target.src = `images/icon-${platform}.svg`;
 }
 
 social.forEach((el) => {
