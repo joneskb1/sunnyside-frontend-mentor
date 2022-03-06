@@ -1,5 +1,3 @@
-// fix social imgs
-
 const hamburger = document.querySelector(".hamburger");
 const nav = document.querySelector("nav");
 const yellowDiv = document.querySelector(".yellow");
@@ -83,13 +81,10 @@ function changeSrc(e) {
   } else if (e.target.classList.contains("tw")) {
     e.target.src = `images/icon-twitter-active.svg`;
   } else if (e.target.classList.contains("pin")) {
-    e.target.src = `images/icon-pinterest--active.svg`;
+    e.target.src = `images/icon-pinterest-active.svg`;
   } else if (e.target.classList.contains("insta")) {
     e.target.src = `images/icon-instagram-active.svg`;
   }
-
-  // const platform = e.target.src.slice(34).replace(".svg", "");
-  // e.target.src = `images/icon-${platform}-active.svg`;
 }
 
 function resetSrc(e) {
@@ -102,9 +97,6 @@ function resetSrc(e) {
   } else if (e.target.classList.contains("insta")) {
     e.target.src = `images/icon-instagram.svg`;
   }
-
-  // const platform = e.target.src.slice(34).replace("-active.svg", "");
-  // e.target.src = `images/icon-${platform}.svg`;
 }
 
 social.forEach((el) => {
